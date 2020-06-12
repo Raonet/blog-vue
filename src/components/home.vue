@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <router-view />
   </div>
 </template>
 
@@ -10,8 +11,8 @@ import Header from "./header/index";
 export default {
   name: "Home",
   components: {
-    Header,
-  },
+    Header
+  }
 };
 </script>
 

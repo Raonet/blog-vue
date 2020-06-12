@@ -1,24 +1,26 @@
 <template>
   <div class="blog-header">
     <ul>
-      <li>首页</li>
-      <li>资源</li>
-      <li>留言板</li>
+      <router-link to="/homepage">
+        <li>首页</li>
+      </router-link>
+      <router-link to="/resource">
+        <li>资源</li>
+      </router-link>
+      <router-link to="/msgboard">
+        <li>留言板</li>
+      </router-link>
     </ul>
-    <div class="search-bar">
-      <input
-        type="text"
-        class="blog-header-input"
-        placeholder="请输入搜索内容"
-      />
-      <img src="../../../public/search.png" />
-    </div>
+    <span class="search-bar">
+      <input type="text" class="blog-header-input" placeholder="请输入搜索内容" />
+    </span>
   </div>
 </template>
 
 <script>
 export default {
   name: "Header",
+  methods: {}
 };
 </script>
 
@@ -26,16 +28,27 @@ export default {
 .blog-header {
   height: 60px;
   background: #fff;
-  padding: 0 0 0 50px;
+  padding: 0;
+  .router-link-active {
+    li {
+      animation: onTitle 1s;
+      background: #b3ee3a;
+      color: #fff;
+      a {
+        color: #fff;
+      }
+    }
+  }
   .search-bar {
-    display: inline-block;
     input {
+      position: absolute;
       height: 20px;
       width: 100px;
       padding: 4px 4px 4px 7px;
       border: 0;
       border-bottom: 1px solid #aaa;
       border-radius: 0;
+      margin: 15px 0 0 0;
     }
     input:hover {
       animation: onInput 1s;
@@ -44,12 +57,6 @@ export default {
     input:focus {
       animation: onInput 1s;
       width: 200px;
-    }
-    img {
-      width: 25px;
-      line-height: 60px;
-      cursor: pointer;
-      position: absolute;
     }
   }
 }
@@ -63,11 +70,13 @@ ul {
   line-height: 60px;
   li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0;
     padding: 0 30px 0 30px;
+    width: 110px;
     cursor: pointer;
     a {
-      color: #42b983;
+      color: #333;
+      text-decoration: none;
     }
   }
   li:hover {
@@ -80,6 +89,14 @@ ul {
     }
     to {
       width: 200px;
+    }
+  }
+  @keyframes onTitle {
+    from {
+      background: #fff;
+    }
+    to {
+      background: #b3ee3a;
     }
   }
 }
