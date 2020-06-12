@@ -32,7 +32,7 @@ export default {
   .router-link-active {
     li {
       animation: onTitle 1s;
-      background: #b3ee3a;
+      background: rgb(87, 110, 117);
       color: #fff;
       a {
         color: #fff;
@@ -74,13 +74,11 @@ ul {
     padding: 0 30px 0 30px;
     width: 110px;
     cursor: pointer;
-    a {
-      color: #333;
-      text-decoration: none;
-    }
+    color: #333;
+    text-decoration: none;
   }
   li:hover {
-    background: #b3ee3a;
+    background: rgb(87, 110, 117);
     color: #fff;
   }
   @keyframes onInput {
@@ -96,7 +94,7 @@ ul {
       background: #fff;
     }
     to {
-      background: #b3ee3a;
+      background: rgb(87, 110, 117);
     }
   }
 }
