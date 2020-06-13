@@ -1,11 +1,13 @@
 <template>
   <div>
     <Login v-if="isShow" @func="getLoginStatus" />
+    <Main v-if="!isShow" />
   </div>
 </template>
 
 <script>
 import Login from "./login";
+import Main from "./main";
 export default {
   name: "Admin",
   data() {
@@ -14,7 +16,8 @@ export default {
     };
   },
   components: {
-    Login
+    Login,
+    Main
   },
   methods: {
     getLoginStatus(data) {

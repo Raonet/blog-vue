@@ -26,6 +26,7 @@ export default {
 
 <style lang="less" scoped>
 .blog-header {
+  text-align: center;
   height: 60px;
   background: #fff;
   padding: 0;
