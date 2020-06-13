@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "App",
-  components: {},
+  components: {}
 };
 </script>
 
@@ -23,7 +23,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background: #f6f6f6;
+  background: #f6f6f6 !important;
 }
 input {
   border-radius: 5px;

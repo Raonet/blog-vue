@@ -4,10 +4,7 @@
     <div class="login-form">
       <div class="clear"></div>
       <div class="avtar">
-        <img
-          src="../../assets/avtar.png"
-          style="width:100px;border-radius:15px"
-        />
+        <img src="../../assets/avtar.png" style="width:100px;border-radius:15px" />
       </div>
       <form>
         <input
@@ -27,7 +24,7 @@
         </div>
       </form>
       <div class="signin">
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login" @click="login" />
       </div>
     </div>
     <div class="copy-rights">
@@ -43,7 +40,11 @@ export default {
     return {};
   },
   components: {},
-  methods: {},
+  methods: {
+    login() {
+      this.$emit("func", false);
+    }
+  }
 };
 </script>
 

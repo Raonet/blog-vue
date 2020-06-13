@@ -9,6 +9,7 @@
     "start": "vue-cli-service serve"
   },
   "dependencies": {
+    "ant-design-vue": "^1.6.2",
     "core-js": "^3.6.5",
     "less": "^3.11.3",
     "less-loader": "^6.1.0",

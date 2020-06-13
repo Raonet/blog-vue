@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Login />
+    <Login v-if="isShow" @func="getLoginStatus" />
   </div>
 </template>
 
@@ -9,12 +9,19 @@ import Login from "./login";
 export default {
   name: "Admin",
   data() {
-    return {};
+    return {
+      isShow: true
+    };
   },
   components: {
-    Login,
+    Login
   },
-  methods: {},
+  methods: {
+    getLoginStatus(data) {
+      this.isShow = data;
+      console.log(data);
+    }
+  }
 };
 </script>
 

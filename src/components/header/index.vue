@@ -11,9 +11,9 @@
         <li>留言板</li>
       </router-link>
     </ul>
-    <span class="search-bar">
+    <!-- <span class="search-bar">
       <input type="text" class="blog-header-input" placeholder="请输入搜索内容" />
-    </span>
+    </span>-->
   </div>
 </template>
 
@@ -78,6 +78,7 @@ ul {
     text-decoration: none;
   }
   li:hover {
+    animation: onTitle 1s;
     background: rgb(87, 110, 117);
     color: #fff;
   }
