@@ -7,7 +7,7 @@
 
 <script>
 import Login from "./login";
-import Main from "./main";
+import Main from "./main/index";
 export default {
   name: "Admin",
   data() {
@@ -22,6 +22,9 @@ export default {
   methods: {
     getLoginStatus(data) {
       this.isShow = data;
+      if (data === false) {
+        this.$router.push("admin/writing");
+      }
     }
   }
 };

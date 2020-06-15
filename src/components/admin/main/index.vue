@@ -3,17 +3,17 @@
     <a-layout-sider v-model="collapsed" :trigger="null" collapsible>
       <div class="logo" />
       <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
-        <a-menu-item key="1">
+        <a-menu-item key="1" @click="jumpTo('/admin/writing')">
           <a-icon type="user" />
           <span>写作</span>
         </a-menu-item>
-        <a-menu-item key="2">
-          <a-icon type="video-camera" />
+        <a-menu-item key="2" @click="jumpTo('/admin/article')">
+          <a-icon type="book" />
           <span>博文管理</span>
         </a-menu-item>
-        <a-menu-item key="3">
-          <a-icon type="upload" />
-          <span>页面管理</span>
+        <a-menu-item key="3" @click="jumpTo('/admin/page-manage')">
+          <a-icon type="appstore" />
+          <span>综合管理</span>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
@@ -26,8 +26,15 @@
         />
       </a-layout-header>
       <a-layout-content
-        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
-      >Content</a-layout-content>
+        :style="{
+          margin: '24px 16px',
+          padding: '24px',
+          background: '#fff',
+          minHeight: '280px',
+        }"
+      >
+        <router-view />
+      </a-layout-content>
     </a-layout>
   </a-layout>
 </template>
@@ -38,6 +45,11 @@ export default {
     return {
       collapsed: false
     };
+  },
+  methods: {
+    jumpTo(url) {
+      this.$router.push({ path: url });
+    }
   }
 };
 </script>

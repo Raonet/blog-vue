@@ -6,6 +6,9 @@ import Admin from "../components/admin/index.vue";
 import Homepage from "../components/homepage/index.vue";
 import Msgboard from "../components/msgboard/index.vue";
 import Resources from "../components/resources/index.vue";
+import Writing from "../components/admin/main/writing.vue";
+import Article from "../components/admin/main/article.vue";
+import PageManage from "../components/admin/main/page-manage.vue";
 
 Vue.use(Router);
 
@@ -44,6 +47,23 @@ export default new Router({
       path: "/admin",
       component: Admin,
       name: "Admin",
+      children: [
+        {
+          path: "writing",
+          component: Writing,
+          name: "Writing",
+        },
+        {
+          path: "article",
+          component: Article,
+          name: "Article",
+        },
+        {
+          path: "page-manage",
+          component: PageManage,
+          name: "PageManage",
+        },
+      ],
     },
   ],
 });
