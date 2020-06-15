@@ -22,7 +22,6 @@ export default {
   methods: {
     getLoginStatus(data) {
       this.isShow = data;
-      console.log(data);
     }
   }
 };

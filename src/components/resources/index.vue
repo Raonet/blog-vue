@@ -1,5 +1,7 @@
 <template>
-  <div>这是资源</div>
+  <div
+    style="width:80%; margin:0 auto; padding:20px; background: #fff; margin-top:10px; text-align: center;"
+  >我是资源</div>
 </template>
 
 <script>

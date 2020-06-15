@@ -14,7 +14,7 @@ Vue.component(Layout.name, Layout);
 Vue.component(Layout.Sider.name, Layout.Sider);
 Vue.component(Layout.Header.name, Layout.Header);
 Vue.component(Layout.Content.name, Layout.Content);
-Vue.component(Menu.name, Menu);
+Vue.use(Menu);
 
 Vue.config.productionTip = false;
 
