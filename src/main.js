@@ -10,6 +10,8 @@ import {
 } from "ant-design-vue/lib";
 import mavonEditor from "mavon-editor";
 import "ant-design-vue/dist/antd.css";
+import axios from "axios";
+import VueAxios from "vue-axios";
 
 import App from "./App.vue";
 import router from "./router/index";
@@ -29,6 +31,8 @@ Vue.use(Button);
 Vue.use(Input);
 
 Vue.use(mavonEditor);
+
+Vue.use(VueAxios, axios);
 
 Vue.config.productionTip = false;
 

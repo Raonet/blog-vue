@@ -4,20 +4,23 @@
     <div class="login-form">
       <div class="clear"></div>
       <div class="avtar">
-        <img src="../../assets/avtar.png" style="width:100px;border-radius:15px" />
+        <img
+          src="../../assets/avtar.png"
+          style="width:100px;border-radius:15px"
+        />
       </div>
       <form>
         <input
           type="text"
           class="text"
-          value="Username"
+          v-model="name"
           onfocus="this.value = '';"
           onblur="if (this.value == '') {this.value = 'Username';}"
         />
         <div class="key">
           <input
             type="password"
-            value="Password"
+            v-model="password"
             onfocus="this.value = '';"
             onblur="if (this.value == '') {this.value = 'Password';}"
           />
@@ -37,14 +40,28 @@
 export default {
   name: "Login",
   data() {
-    return {};
+    return {
+      name: "",
+      password: "",
+    };
   },
   components: {},
   methods: {
     login() {
-      this.$emit("func", false);
-    }
-  }
+      this.axios
+        .post("api/admin/login", { name: this.name, password: this.password })
+        .then((res) => {
+          if (res.data === 0) {
+            alert("帐号或密码错误，请重新输入!");
+            return;
+          }
+          this.$emit("func", false);
+        })
+        .catch((err) => {
+          console.l0g(err);
+        });
+    },
+  },
 };
 </script>
 
